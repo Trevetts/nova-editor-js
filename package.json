@@ -10,6 +10,7 @@
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
     "devDependencies": {
+        "@editorjs/attaches": "^1.0.1",
         "@editorjs/checklist": "^1.1.0",
         "@editorjs/code": "^2.4.1",
         "@editorjs/delimiter": "^1.1.0",

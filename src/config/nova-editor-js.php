@@ -33,6 +33,11 @@ return [
             'activated' => true,
             'shortcut' => 'CMD+SHIFT+L'
         ],
+        'attaches' => [
+            'activated' => true,
+            'path' => 'public/files',
+            'disk' => 'local',
+        ],
         'image' => [
             'activated' => true,
             'shortcut' => 'CMD+SHIFT+I',

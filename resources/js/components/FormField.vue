@@ -84,6 +84,24 @@
         }
     }
 
+    function setAttachesToolSettings(self, tools) {
+        if (self.field.toolSettings.attaches.activated === true) {
+            const AttachesTool = require('@editorjs/attaches');
+
+            tools.attaches = {
+                class: AttachesTool,
+                config: {
+                    endpoints: {
+                        byFile: self.field.uploadImageByFileEndpoint,
+                    },
+                    additionalRequestHeaders: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    }
+                }
+            }
+        }
+    }
+
     function setInlineCodeToolSettings(self, tools) {
         if (self.field.toolSettings.inlineCode.activated === true) {
             const InlineCode = require('@editorjs/inline-code');
@@ -193,6 +211,7 @@
                 setCodeToolSettings(self, tools);
                 setLinkToolSettings(self, tools);
                 setImageToolSettings(self, tools);
+                setAttachesToolSettings(self, tools);
                 setInlineCodeToolSettings(self, tools);
                 setChecklistToolSettings(self, tools);
                 setMarkerToolSettings(self, tools);
