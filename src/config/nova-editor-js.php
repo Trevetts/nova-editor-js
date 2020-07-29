@@ -192,6 +192,19 @@ return [
                     'type' => 'boolean'
                 ]
             ],
+            'attaches' => [
+                'file' => [
+                    'type' => 'array',
+                    'data' => [
+                        'url' => [
+                            'type' => 'string',
+                        ],
+                    ],
+                ],
+                'label' => [
+                    'type' => 'string'
+                ]
+            ],
             'code' => [
                 'code' => [
                     'type' => 'string'

@@ -91,12 +91,7 @@
             tools.attaches = {
                 class: AttachesTool,
                 config: {
-                    endpoints: {
-                        byFile: self.field.uploadImageByFileEndpoint,
-                    },
-                    additionalRequestHeaders: {
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                    }
+                    endpoints: self.field.uploadImageByFileEndpoint,
                 }
             }
         }
