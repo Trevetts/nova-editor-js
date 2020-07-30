@@ -26,6 +26,7 @@ class NovaEditorJs extends Field
                 'autofocus' => config('nova-editor-js.editorSettings.autofocus', false),
             ],
             'toolSettings' => config('nova-editor-js.toolSettings'),
+            'uploadFileEndpoint' => route('editor-js-file-upload'),
             'uploadImageByFileEndpoint' => route('editor-js-upload-image-by-file'),
             'uploadImageByUrlEndpoint' => route('editor-js-upload-image-by-url'),
             'fetchUrlEndpoint' => route('editor-js-fetch-url'),

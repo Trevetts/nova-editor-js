@@ -91,7 +91,7 @@
             tools.attaches = {
                 class: AttachesTool,
                 config: {
-                    endpoints: self.field.uploadImageByFileEndpoint,
+                    endpoint: self.field.uploadFileEndpoint,
                 }
             }
         }

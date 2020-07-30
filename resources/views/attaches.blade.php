@@ -1,5 +1,5 @@
 <div class="editor-js-block">
-    <div class="editor-js-file {{ $classes }}">
-        <a href="{{ $file['url'] }}">{{ $title }}</a>
+    <div class="editor-js-file">
+        <a href="{{ $file['url'] }}">{{ $file['title'] }}</a>
     </div>
 </div>

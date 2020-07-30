@@ -31,6 +31,7 @@ class FieldServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-editor-js');
 
         Nova::serving(function (ServingNova $event) {
+            Nova::script('nova-editor-js', __DIR__ . '/../dist/js/attaches-bundle.js');
             Nova::script('nova-editor-js', __DIR__ . '/../dist/js/field.js');
             Nova::style('nova-editor-js', __DIR__ . '/../dist/css/field.css');
         });

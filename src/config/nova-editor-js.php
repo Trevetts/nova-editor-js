@@ -199,12 +199,20 @@ return [
                         'url' => [
                             'type' => 'string',
                         ],
+                        'name' => [
+                            'type' => 'string',
+                        ],
+                        'size' => [
+                            'type' => 'int',
+                        ],
+                        'extension' => [
+                            'type' => 'string',
+                        ],
                     ],
                 ],
-                'label' => [
-                    'type' => 'string'
-                ]
-            ],
+                'title' => [
+                    'type' => 'string',
+                ],
             'code' => [
                 'code' => [
                     'type' => 'string'
@@ -217,9 +225,6 @@ return [
                 'meta' => [
                     'type' => 'array',
                     'data' => [
-                        'title' => [
-                            'type' => 'string',
-                        ],
                         'description' => [
                             'type' => 'string',
                         ],

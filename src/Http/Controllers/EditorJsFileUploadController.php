@@ -4,7 +4,6 @@ namespace Advoor\NovaEditorJs\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\Validator;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class EditorJsFileUploadController extends Controller
@@ -17,30 +16,35 @@ class EditorJsFileUploadController extends Controller
      */
     public function file(NovaRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'file' => 'required|file',
-        ]);
 
-        if ($validator->fails()) {
+        $file = $request->file('file');
+        
+        if (!$file->isValid()) {
             return [
                 'success' => 0
             ];
         }
 
+        $name = $file->getClientOriginalName();
+
         $path = $request->file('file')->store(
-            config('nova-editor-js.toolSettings.file.path'),
-            config('nova-editor-js.toolSettings.file.disk')
+            config('nova-editor-js.toolSettings.attaches.path'),
+            config('nova-editor-js.toolSettings.attaches.disk')
         );
 
-        $this->applyAlterations(Storage::disk(config('nova-editor-js.toolSettings.file.disk'))->path($path));
+        $size = Storage::size($path);
+        $size = Storage::size($path);
 
         return [
             'success' => 1,
             'file' => [
-                'url' => Storage::disk(config('nova-editor-js.toolSettings.file.disk'))->url($path),
+                'name' => $name,
+                'url' => $path,
+                'size' => $size,
             ]
         ];
     }
+    
 
 
 }
