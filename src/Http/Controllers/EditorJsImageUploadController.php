@@ -99,6 +99,8 @@ class EditorJsImageUploadController extends Controller
      */
     private function applyAlterations($path, $alterations = [])
     {
+        return;
+
         try {
             $image = Image::load($path);
 

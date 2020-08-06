@@ -227,9 +227,15 @@ return [
                     'data' => [
                         'description' => [
                             'type' => 'string',
+                            'required' => false,
+                        ],
+                        'title' => [
+                            'type' => 'string',
+                            'required' => false,
                         ],
                         'image' => [
                             'type' => 'array',
+                            'required' => false,
                             'data' => [
                                 'url' => [
                                     'type' => 'string',
