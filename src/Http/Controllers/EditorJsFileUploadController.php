@@ -33,7 +33,6 @@ class EditorJsFileUploadController extends Controller
         );
 
         $size = Storage::size($path);
-        $size = Storage::size($path);
 
         return [
             'success' => 1,
